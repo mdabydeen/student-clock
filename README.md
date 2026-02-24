@@ -36,6 +36,18 @@ npm run preview
 npm run test
 ```
 
+Coverage (with enforced thresholds):
+
+```bash
+npm run test:coverage
+```
+
+Playwright smoke tests:
+
+```bash
+npm run test:e2e
+```
+
 ## URL Parameters
 
 The app reads these query parameters at load time:
@@ -58,5 +70,12 @@ Example:
 ## GitHub Pages Deployment
 
 Deployment is automated via `.github/workflows/deploy.yml` on pushes to `main`.
+
+## CI
+
+Automated CI is defined in `.github/workflows/ci.yml` and runs:
+
+- Unit tests with coverage thresholds
+- Playwright smoke tests in Chromium
 
 After enabling Pages for the repository (Build and deployment: GitHub Actions), every push to `main` will publish the latest build.
